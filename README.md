@@ -10,6 +10,15 @@ A simple command-line to-do list application written in Python. This app allows 
 - **`todos_function.py`**: Contains the functions for managing to-do items.
 - **`storage.txt`**: A text file used for storing the to-do list data.
 
+## Features
+
+- **Add To-Do Items**: Allows users to add new items to their to-do list. Duplicate items are detected and not added again.
+- **Show To-Do Items**: Displays all current to-do items with their indices and the number of remaining todos.
+- **Edit To-Do Items**: Lets users edit an existing to-do item by selecting its index and providing a new value.
+- **Complete To-Do Items**: Marks a to-do item as complete by removing it from the list.
+- **Reset To-Do List**: Clears all items from the to-do list after user confirmation.
+- **Persistent Storage**: Uses a text file (`storage.txt`) to save and load the list of to-dos, ensuring data is preserved between sessions.
+
 ## Functions
 
 ### `get_user_action()`
@@ -42,3 +51,12 @@ The application uses a text file named `storage.txt` to store the to-do items.
 - If **`storage.txt`** is not found, the application will start with an empty to-do list and create a new **`storage.txt`** file when items are added.
 
 The application handles reading from and writing to **`storage.txt`** to ensure that the to-do list persists between runs.
+
+
+## Error Handling
+
+The application includes basic error handling to manage user input and file operations:
+
+- **File Not Found**: If **`storage.txt`** is not found when the application starts, it initializes an empty to-do list and prints a message informing the user.
+- **Invalid Input**: When the user provides invalid input for editing or completing a to-do item (e.g., non-numeric values or out-of-range indices), the application displays an error message and prompts the user to enter valid input.
+- **Confirmation Prompts**: Before resetting the to-do list or editing an item, the application asks for user confirmation to prevent accidental data loss.
