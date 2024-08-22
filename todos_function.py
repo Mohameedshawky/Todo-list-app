@@ -1,6 +1,6 @@
 def get_user_action():
     user_action = input("add, show, edit, complete, reset or exit :")
-    user_action = user_action.strip()
+    user_action = user_action.strip().lower()
     return user_action
 
 
